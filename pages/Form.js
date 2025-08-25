@@ -25,7 +25,7 @@ function Form() {
         });
 
         const data = await res.json();
-        return data.public_id; // أو return data.asset_id;
+        return data.public_id;
     };
     const handlesubmit = async (e) => {
         e.preventDefault();
@@ -37,7 +37,7 @@ function Form() {
 
             const setdate = {
                 ...DataForm,
-                imageId, // 🆔 ربط الصورة بالمنشور
+                imageId,
                 date: Timestamp.fromDate(new Date(DataForm.date))
             };
             await setDoc(doc(db, "posts", Date.now().toString()), setdate);
@@ -48,7 +48,7 @@ function Form() {
             }, 3000)
         } catch (error) {
 
-            toast.error('حدث خطأ أثناء الإرسال');
+            toast.error("error");
         }
     }
     useEffect(() => {
