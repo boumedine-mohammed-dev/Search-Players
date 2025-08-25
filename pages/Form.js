@@ -47,14 +47,13 @@ function Form() {
                 router.push('/')
             }, 3000)
         } catch (error) {
-            console.error(error);
+
             toast.error('حدث خطأ أثناء الإرسال');
         }
     }
     useEffect(() => {
         setDataForm({ ...DataForm, username: session?.user?.name, email: session?.user?.email })
     }, [session]);
-    console.log(DataForm)
     return (
         <div>
             <form class="max-w-sm mx-auto p-8  border-2 border-orange-300" onSubmit={handlesubmit}>

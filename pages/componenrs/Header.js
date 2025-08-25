@@ -7,8 +7,6 @@ import Image from 'next/image';
 function Header() {
     const { data: session } = useSession();
     const router = useRouter();
-    console.log(session)
-    console.log(session?.user?.image)
     return (
         <div className='flex justify-between p-4' >
             <Image src='/image/logo.png' width={100} height={100} />

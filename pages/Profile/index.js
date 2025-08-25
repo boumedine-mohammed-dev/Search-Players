@@ -22,7 +22,6 @@ function index() {
             const posts = [];
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
-                console.log(doc.id, " => ", doc.data());
                 posts.push({ id: doc.id, ...doc.data() });
             });
             setdata(posts)
@@ -34,7 +33,6 @@ function index() {
         const newlist = data.filter((post) => {
             return post.id !== id
         })
-        console.log(newlist)
         setdata(newlist)
         setTimeout(() => {
             router.push('/')

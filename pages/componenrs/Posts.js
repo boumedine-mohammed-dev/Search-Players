@@ -19,8 +19,6 @@ function Posts({ posts }) {
         };
         fetchImages();
     }, []);
-    console.log(images);
-    console.log(posts);
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-5 m-5 mt-5">
             {posts?.map((e, index) => (
